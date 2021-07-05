@@ -3,6 +3,13 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#pastas
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+
 # User-specific files
 *.rsuser
 *.suo
@@ -376,3 +383,36 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+src/Api.Application/bin/*
+src/Api.Application/bin/Debug/netcoreapp3.1/application.deps.json
+src/Api.Application/bin/Debug/netcoreapp3.1/application.dll
+src/Api.Application/bin/Debug/netcoreapp3.1/application.exe
+src/Api.Application/bin/Debug/netcoreapp3.1/application.pdb
+src/Api.Application/bin/Debug/netcoreapp3.1/application.runtimeconfig.json
+src/Api.Application/obj/Debug/netcoreapp3.1/application.AssemblyInfo.cs
+src/Api.Application/obj/Debug/netcoreapp3.1/application.assets.cache
+src/Api.Application/obj/Debug/netcoreapp3.1/application.csproj.CoreCompileInputs.cache
+src/Api.Application/obj/Debug/netcoreapp3.1/application.csproj.FileListAbsolute.txt
+src/Api.Application/obj/Debug/netcoreapp3.1/application.csprojAssemblyReference.cache
+src/Api.Application/obj/Debug/netcoreapp3.1/application.dll
+src/Api.Application/obj/Debug/netcoreapp3.1/application.genruntimeconfig.cache
+src/Api.Application/obj/Debug/netcoreapp3.1/application.pdb
+src/Api.CrossCutting/bin/Debug/netcoreapp3.1/CrossCutting.deps.json
+src/Api.CrossCutting/bin/Debug/netcoreapp3.1/CrossCutting.dll
+src/Api.CrossCutting/bin/Debug/netcoreapp3.1/CrossCutting.pdb
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfo.cs
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.assets.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csproj.CoreCompileInputs.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csprojAssemblyReference.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.dll
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.pdb
+src/Api.CrossCutting/obj/CrossCutting.csproj.nuget.dgspec.json
+src/Api.CrossCutting/obj/CrossCutting.csproj.nuget.g.props
+src/Api.CrossCutting/obj/project.assets.json
+src/Api.CrossCutting/obj/project.nuget.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfo.cs
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.assets.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csproj.CoreCompileInputs.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csprojAssemblyReference.cache
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.dll
+src/Api.CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.pdb
