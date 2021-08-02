@@ -17,7 +17,8 @@ namespace Api.CrossCutting.DependencyInjection
 
             serviceCollection.AddDbContext<MyContext>(options =>
             {
-                options.UseMySql("Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=Mudar@123");
+                //options.UseMySql("Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=Mudar@123");
+                options.UseSqlServer("Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True");
             });
         }
     }
