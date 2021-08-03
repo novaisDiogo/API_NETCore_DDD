@@ -13,7 +13,10 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECTION": "Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR"
       }
     },
     "application": {
@@ -21,7 +24,10 @@
       "launchBrowser": true,
       "launchUrl": "weatherforecast",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECTION": "Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR"
       },
       "applicationUrl": "http://localhost:5000"
     }

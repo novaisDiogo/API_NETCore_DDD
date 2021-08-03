@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using CrossCutting.Mappings;
 using AutoMapper;
+using Api.Data.Context;
 
 namespace application
 {
@@ -148,6 +149,17 @@ namespace application
             {
                 endpoints.MapControllers();
             });
+
+            if(Environment.GetEnvironmentVariable("MIGRATION").ToLower() == "aplicar".ToLower())
+            {
+                using(var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    using(var context = service.ServiceProvider.GetService<MyContext>())
+                    {
+                        context.Database.Migrate();
+                    }
+                }
+            }
         }
     }
 }
