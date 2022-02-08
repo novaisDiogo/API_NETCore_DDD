@@ -14,9 +14,12 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION": "Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
+        "DB_CONNECTION": "Persist Security Info=True;Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
         "DATABASE": "SQLSERVER",
-        "MIGRATION": "APLICAR"
+        "MIGRATION": "APLICAR",
+        "Audience": "ExemploAudience",
+        "Issuer": "ExemploIssuer",
+        "Seconds": "120"
       }
     },
     "application": {
@@ -25,7 +28,7 @@
       "launchUrl": "weatherforecast",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION": "Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
+        "DB_CONNECTION": "Persist Security Info=True;Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi;Integrated Security=True",
         "DATABASE": "SQLSERVER",
         "MIGRATION": "APLICAR"
       },

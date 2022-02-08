@@ -24,16 +24,29 @@ namespace application
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
+            _environment = environment;
             Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
+        public IWebHostEnvironment _environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            if (_environment.IsEnvironment("Testing"))
+            {
+                Environment.SetEnvironmentVariable("DB_CONNECTION", "Persist Security Info=True;Data Source=DESKTOP-MNKOETH;Initial Catalog=dbApi_Integration;Integrated Security=True");
+                Environment.SetEnvironmentVariable("DATABASE", "SQLSERVER");
+                Environment.SetEnvironmentVariable("MIGRATION", "APLICAR");
+                Environment.SetEnvironmentVariable("Audience", "ExemploAudience");
+                Environment.SetEnvironmentVariable("Issuer", "ExemploIssuer");
+                Environment.SetEnvironmentVariable("Seconds", "120");
+            }
+
             ConfigureService.ConfigureDependenciesService(services);
             ConfigureRepository.ConfigureDependenciesRepository(services);
 
@@ -150,11 +163,11 @@ namespace application
                 endpoints.MapControllers();
             });
 
-            if(Environment.GetEnvironmentVariable("MIGRATION").ToLower() == "aplicar".ToLower())
+            if (Environment.GetEnvironmentVariable("MIGRATION").ToLower() == "aplicar".ToLower())
             {
-                using(var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                using (var service = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
-                    using(var context = service.ServiceProvider.GetService<MyContext>())
+                    using (var context = service.ServiceProvider.GetService<MyContext>())
                     {
                         context.Database.Migrate();
                     }
