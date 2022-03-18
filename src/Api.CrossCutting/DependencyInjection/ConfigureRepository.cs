@@ -3,6 +3,8 @@ using Api.Data.Implementations;
 using Api.Data.Repository;
 using Api.Domain.Interfaces;
 using Api.Domain.Repository;
+using Data.Implementations;
+using Domain.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -16,7 +18,11 @@ namespace Api.CrossCutting.DependencyInjection
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddScoped<IUserRepository, UserImplementation>();
 
-            if(Environment.GetEnvironmentVariable("DATABASE").ToLower() == "sqlserver".ToLower())
+            serviceCollection.AddScoped<IUfRepository, UfImplementation>();
+            serviceCollection.AddScoped<IMunicipioRepository, MunicipioImplementation>();
+            serviceCollection.AddScoped<ICepRepository, CepImplementation>();
+
+            if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "sqlserver".ToLower())
             {
                 serviceCollection.AddDbContext<MyContext>(options =>
                 {
