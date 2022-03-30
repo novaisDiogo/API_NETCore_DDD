@@ -146,7 +146,7 @@ namespace application.Controllers
 
         [Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Post([FromBody] MunicipioDtoUpdate dtoUpdate)
+        public async Task<ActionResult> Put([FromBody] MunicipioDtoUpdate dtoUpdate)
         {
             if (!ModelState.IsValid)
             {
@@ -164,6 +164,27 @@ namespace application.Controllers
                 {
                     return BadRequest();
                 }
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [Authorize("Bearer")]
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var result = await _service.Delete(id);
+
+                return Ok(result);
             }
             catch (ArgumentException e)
             {
