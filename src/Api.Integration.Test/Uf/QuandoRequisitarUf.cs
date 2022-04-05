@@ -13,7 +13,7 @@ namespace Api.Integration.Test.Uf
     public class QuandoRequisitarUf : BaseIntegration
     {
         [Fact]
-        public async Task E_Possivel_Realizar_Crud_Usuario()
+        public async Task E_Possivel_Realizar_Crud_Uf()
         {
             await AddToken();
 
