@@ -15,7 +15,7 @@ namespace Api.Application.Test.Cep.QuandoRequisitarUpdate
     {
         private CepsController _controller;
         private Mock<ICepService> _serviceMock;
-        private Mock<IUrlHelper> _urlMock;
+
         [Fact(DisplayName = "É possivel realizar o Created")]
         public async Task E_Possivel_Realizar_Created()
         {

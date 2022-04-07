@@ -92,7 +92,7 @@ namespace application
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Curso de API com AspNetCore",
+                    Title = "API .NETCore3.1/.NET5.0",
                     Description = "Arquitetura DDD",
                     TermsOfService = new Uri("http://www.teste.com.br"),
                     Contact = new OpenApiContact

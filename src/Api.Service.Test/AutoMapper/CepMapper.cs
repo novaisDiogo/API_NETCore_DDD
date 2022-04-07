@@ -110,7 +110,7 @@ namespace Api.Service.Test.AutoMapper
             Assert.Equal(cepModel.Id, cepDto.Id);
             Assert.Equal(cepModel.Logradouro, cepDto.Logradouro);
             Assert.Equal(cepModel.Cep, cepDto.Cep);
-            Assert.Equal(cepModel.Numero, "S/N");
+            Assert.Equal("S/N", cepModel.Numero);
 
             var cepDtoCreate = Mapper.Map<CepDtoCreate>(cepModel);
             Assert.Equal(cepModel.Numero, cepDtoCreate.Numero);

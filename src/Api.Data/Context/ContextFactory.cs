@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using System;
 using System.IO;
 
@@ -33,7 +34,7 @@ namespace Api.Data.Context
             }
             else
             {
-                optionBuilder.UseMySql(connectionString);
+                optionBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 21)));
             }
 
             return new MyContext(optionBuilder.Options);

@@ -50,7 +50,7 @@ namespace Service.Services
         {
             var model = _mapper.Map<CepModel>(cep);
             var entity = _mapper.Map<CepEntity>(model);
-            var result = await _repository.InsertAsync(entity);
+            var result = await _repository.UpdateAsync(entity);
 
             return _mapper.Map<CepDtoUpdateResult>(result);
         }
