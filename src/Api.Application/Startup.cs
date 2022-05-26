@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Authorization;
 using CrossCutting.Mappings;
 using AutoMapper;
 using Api.Data.Context;
+using CrossCutting.Logging;
 
 namespace application
 {
@@ -134,12 +135,17 @@ namespace application
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            loggerFactory.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration 
+            { 
+                LogLevel = LogLevel.Debug 
+            }));
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
